@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Dashboard Operativa SOP 01</title>
-  <style>
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=70WoeJ_dtwIjN-wlANwV93G1brMjahMXAMcQ15cx1K2jzr1Sn53uUNpoLXt3RydmjTtVL-tC8tUnQCc6m2lhm1kPTgvCECui7NVaslEoFUs" charset="UTF-8"></script><style>
     :root{--bg:#0b0f14;--card:#121925;--muted:#9fb0c3;--text:#e9f0f7;--accent:#4dd4ff;--good:#22c55e;--warn:#f59e0b;--bad:#ef4444;--line:#223044;}
     *{box-sizing:border-box}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#070a0f,#0b0f14);color:var(--text)}
@@ -315,6 +314,17 @@ const CL={
     {id:"planning_3",label:"Task/Note impostate",desc:"Domani parte senza attrito."},
   ]
 };
+
+
+/* IMPLEMENTA: link cliccabile nella sezione "Pubblica 2–3 contenuti (inizio giornata)" */
+(function(){
+  try{
+    const t = (CL && CL.social) ? CL.social.find(x=>x.id==="social_1") : null;
+    if(t){
+      t.desc = t.desc + ` <a href="https://chatgpt.com/c/696505a9-14f0-8328-b3ab-09a7181d5a81" target="_blank" rel="noopener">Apri link</a>`;
+    }
+  }catch(e){}
+})();
 
 function renderChecklist(containerId, items, state){
   const c=document.getElementById(containerId); c.innerHTML="";
